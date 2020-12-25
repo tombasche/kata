@@ -1,7 +1,6 @@
 package twosum
 
 import (
-	"fmt"
 	"math/rand"
 	"reflect"
 	"testing"
@@ -48,6 +47,5 @@ func TestTwoSum(t *testing.T) {
 
 func BenchmarkTwoSum(b *testing.B) {
 	input := rand.Perm(10000000)
-	r := TwoSum(input, 479968)
-	fmt.Printf("%v", r)
+	_ = TwoSum(input, 479941)
 }

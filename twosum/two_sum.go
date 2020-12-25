@@ -2,17 +2,13 @@ package twosum
 
 func TwoSum(input []int, target int) []int {
 
-	for compareIdx := range input {
-		firstElem := input[compareIdx]
-		for idx, val := range input {
-			if idx == compareIdx {
-				continue
-			}
-			if firstElem+val == target {
-				return []int{compareIdx, idx}
-			}
+	cache := make(map[int]int)
+	for idx, val := range input {
+		complement := target - val
+		if cachedIdx, ok := cache[complement]; ok {
+			return []int{cachedIdx, idx}
 		}
+		cache[val] = idx
 	}
-
 	return []int{}
 }
