@@ -16,6 +16,7 @@ func TestValidIP(t *testing.T) {
 		{"192.168.1.00", Neither},
 		{"192.168@1.1", Neither},
 		{"2001:0db8:85a3::8A2E:037j:7334", Neither},
+		{"1e1.4.5.6", Neither},
 	}
 	for _, tt := range tests {
 		r := ValidIP(tt.input)
