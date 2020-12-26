@@ -8,6 +8,13 @@ func TestAtoi(t *testing.T) {
 		expected int
 	}{
 		{"42", 42},
+		{"-42", -42},
+		{"    -23", -23},
+		{"    ", 0},
+		{"4193 with words", 4193},
+		{"words and 987", 0},
+		{"-91283472332", -2147483648},
+		{"91283472332", 2147483647},
 	}
 	for _, tt := range tests {
 		r := Atoi(tt.input)
